@@ -1,6 +1,7 @@
 *.log
+*.zip
 .venv
 crawl_test/
 __pycache__/
-*.zip
 test.json
+

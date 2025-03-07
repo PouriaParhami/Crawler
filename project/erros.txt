@@ -1,0 +1,534 @@
+Phase One errors:
+
+[ERROR]... × Error processing iframe 0: Page.evaluate: ReferenceError: streamId is not defined
+    at eval (eval at evaluate (:234:30), <anonymous>:35:53)
+    at UtilityScript.evaluate (<anonymous>:241:19)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+
+why?
+when?
+how to solve?
+
+    ----------------------------------------------------------------
+    [ERROR]... × https://donya-e-eqtesad.com/... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐      
+│ × Unexpected error in _crawl_web at line 1354 in _crawl_web (.venv\Lib\site-                                          │      
+│ packages\crawl4ai\async_crawler_strategy.py):                                                                         │      
+│   Error: Failed on navigating ACS-GOTO:                                                                               │      
+│   Page.goto: Timeout 60000ms exceeded.                                                                                │      
+│   Call log:                                                                                                           │      
+│   - navigating to "https://donya-e-eqtesad.com/", waiting until "domcontentloaded"                                    │      
+│                                                                                                                       │      
+│                                                                                                                       │      
+│   Code context:                                                                                                       │      
+│   1349                       response = await page.goto(                                                              │      
+│   1350                           url, wait_until=config.wait_until, timeout=config.page_timeout                       │      
+│   1351                       )                                                                                        │      
+│   1352                       redirected_url = page.url                                                                │      
+│   1353                   except Error as e:                                                                           │      
+│   1354 →                     raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")                          │      
+│   1355                                                                                                                │      
+│   1356                   await self.execute_hook(                                                                     │      
+│   1357                       "after_goto", page, context=context, url=url, response=response, config=config           │      
+│   1358                   )                                                                                            │      
+│   1359                                                                                                                │      
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘      
+---------------------------------------------------------
+[ERROR]... × Large viewport screenshot failed: Failed to take large viewport screenshot: Page.screenshot: Timeout 30000ms exceeded.
+Call log:
+  - taking page screenshot
+  -   - waiting for fonts to load...
+  -   - fonts loaded
+------------------------------------------------------
+[ERROR]... × https://www.isna.ir/news/1403120705000/%D9%88%DB%8... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 528 in wrap_api_call (.venv\Lib\site-                                        │
+│ packages\playwright\_impl\_connection.py):                                                                            │
+│   Error: BrowserContext.add_init_script: Target page, context or browser has been closed                              │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   523           parsed_st = _extract_stack_trace_information_from_stack(st, is_internal)                              │
+│   524           self._api_zone.set(parsed_st)                                                                         │
+│   525           try:                                                                                                  │
+│   526               return await cb()                                                                                 │
+│   527           except Exception as error:                                                                            │
+│   528 →             raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None                          │
+│   529           finally:                                                                                              │
+│   530               self._api_zone.set(None)                                                                          │
+│   531                                                                                                                 │
+│   532       def wrap_api_call_sync(                                                                                   │
+│   533           self, cb: Callable[[], Any], is_internal: bool = False                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+----------------------------------------------------------------------
+[ERROR]... × https://www.isna.ir/news/1403120704804/%D9%88%D8%B... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 1354 in _crawl_web (.venv\Lib\site-                                          │
+│ packages\crawl4ai\async_crawler_strategy.py):                                                                         │
+│   Error: Failed on navigating ACS-GOTO:                                                                               │
+│   Page.goto: Timeout 60000ms exceeded.                                                                                │
+│   Call log:                                                                                                           │
+│   - navigating to "https://www.isna.ir/news/1403120704804/%D9%88%D8%B2%DB%8C%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-    │
+│ %D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D9%88%D8%A7%D8%B1%D8%AF-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D8%AF", waiting until   │
+│ "domcontentloaded"                                                                                                    │
+│                                                                                                                       │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   1349                       response = await page.goto(                                                              │
+│   1350                           url, wait_until=config.wait_until, timeout=config.page_timeout                       │
+│   1351                       )                                                                                        │
+│   1352                       redirected_url = page.url                                                                │
+│   1353                   except Error as e:                                                                           │
+│   1354 →                     raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")                          │
+│   1355                                                                                                                │
+│   1356                   await self.execute_hook(                                                                     │
+│   1357                       "after_goto", page, context=context, url=url, response=response, config=config           │
+│   1358                   )                                                                                            │
+│   1359                                                                                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120704844/%D9%85%D8%A... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 1354 in _crawl_web (.venv\Lib\site-                                          │
+│ packages\crawl4ai\async_crawler_strategy.py):                                                                         │
+│   Error: Failed on navigating ACS-GOTO:                                                                               │
+│   Page.goto: Timeout 60000ms exceeded.                                                                                │
+│   Call log:                                                                                                           │
+│   - navigating to "https://www.isna.ir/news/1403120704844/%D9%85%D8%AA%D8%B1%D8%AC%D9%85-                             │
+│ %DA%A9%D8%A7%D8%B1%D8%AA%D8%A7%D9%84-%D8%AF%D8%B1-%D8%A2%D8%B3%D8%AA%D8%A7%D9%86%D9%87-                               │
+│ %D8%A8%D8%B1%DA%A9%D9%86%D8%A7%D8%B1%DB%8C", waiting until "domcontentloaded"                                         │
+│                                                                                                                       │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   1349                       response = await page.goto(                                                              │
+│   1350                           url, wait_until=config.wait_until, timeout=config.page_timeout                       │
+│   1351                       )                                                                                        │
+│   1352                       redirected_url = page.url                                                                │
+│   1353                   except Error as e:                                                                           │
+│   1354 →                     raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")                          │
+│   1355                                                                                                                │
+│   1356                   await self.execute_hook(                                                                     │
+│   1357                       "after_goto", page, context=context, url=url, response=response, config=config           │
+│   1358                   )                                                                                            │
+│   1359                                                                                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705058/%D8%B4%D9%8... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 1354 in _crawl_web (.venv\Lib\site-                                          │
+│ packages\crawl4ai\async_crawler_strategy.py):                                                                         │
+│   Error: Failed on navigating ACS-GOTO:                                                                               │
+│   Page.goto: Timeout 60000ms exceeded.                                                                                │
+│   Call log:                                                                                                           │
+│   - navigating to "https://www.isna.ir/news/1403120705058/%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%DB%B5%DB%B9-                │
+│ %D8%A7%D8%B3%DB%8C%D8%B1-%D9%81%D9%84%D8%B3%D8%B7%DB%8C%D9%86%DB%8C-%D8%AF%D8%B1-%D8%B2%D9%86%D8%AF%D8%A7%D9%86-      │
+│ %D9%87%D8%A7%DB%8C-%D8%B1%DA%98%DB%8C%D9%85-%D8%B5%D9%87%DB%8C%D9%88%D9%86%DB%8C%D8%B3%D8%AA%DB%8C-%D8%A7%D8%B2-      │
+│ %DB%B7-%D8%A7%DA%A9%D8%AA%D8%A8%D8%B1", waiting until "domcontentloaded"                                              │
+│                                                                                                                       │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   1349                       response = await page.goto(                                                              │
+│   1350                           url, wait_until=config.wait_until, timeout=config.page_timeout                       │
+│   1351                       )                                                                                        │
+│   1352                       redirected_url = page.url                                                                │
+│   1353                   except Error as e:                                                                           │
+│   1354 →                     raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")                          │
+│   1355                                                                                                                │
+│   1356                   await self.execute_hook(                                                                     │
+│   1357                       "after_goto", page, context=context, url=url, response=response, config=config           │
+│   1358                   )                                                                                            │
+│   1359                                                                                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705056/%D9%88%D9%8... | Error:
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 1354 in _crawl_web (.venv\Lib\site-                                          │
+│ packages\crawl4ai\async_crawler_strategy.py):                                                                         │
+│   Error: Failed on navigating ACS-GOTO:                                                                               │
+│   Page.goto: Timeout 60000ms exceeded.                                                                                │
+│   Call log:                                                                                                           │
+│   - navigating to "https://www.isna.ir/news/1403120705056/%D9%88%D9%82%D9%88%D9%81-%D8%AF%D9%88%D9%84%D8%AA-          │
+│ %D8%A8%D9%87-%D9%85%D8%B3%D8%A6%D9%88%D9%84%DB%8C%D8%AA-%D8%AA%D8%A3%D9%85%DB%8C%D9%86-                               │
+│ %D8%AE%D9%88%D8%AF%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D8%A7%DB%8C%D9%85%D9%86-%D8%AA%D8%B1", waiting until                │
+│ "domcontentloaded"                                                                                                    │
+│                                                                                                                       │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   1349                       response = await page.goto(                                                              │
+│   1350                           url, wait_until=config.wait_until, timeout=config.page_timeout                       │
+│   1351                       )                                                                                        │
+│   1352                       redirected_url = page.url                                                                │
+│   1353                   except Error as e:                                                                           │
+│   1354 →                     raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")                          │
+│   1355                                                                                                                │
+│   1356                   await self.execute_hook(                                                                     │
+│   1357                       "after_goto", page, context=context, url=url, response=response, config=config           │
+│   1358                   )                                                                                            │
+│   1359                                                                                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705054/%D8%A8%D8%B... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 1354 in _crawl_web (.venv\Lib\site-                                          │
+│ packages\crawl4ai\async_crawler_strategy.py):                                                                         │
+│   Error: Failed on navigating ACS-GOTO:                                                                               │
+│   Page.goto: Timeout 60000ms exceeded.                                                                                │
+│   Call log:                                                                                                           │
+│   - navigating to "https://www.isna.ir/news/1403120705054/%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C-                             │
+│ %D8%B1%D8%A7%D9%87%DA%A9%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D9%85%D9%82%D8%A7%D8%A8%D9%84%D9%87-%D8%A8%D8%A7-             │
+│ %D8%A8%DB%8C%D9%85%D8%A7%D8%B1%DB%8C-%D9%87%D8%A7%DB%8C-%D9%85%D9%86%D8%AA%D9%82%D9%84%D9%87-%D8%A7%D8%B2-            │
+│ %D8%A2%D8%A8-%D9%88-%D8%BA%D8%B0%D8%A7-%D8%AF%D8%B1", waiting until "domcontentloaded"                                │
+│                                                                                                                       │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   1349                       response = await page.goto(                                                              │
+│   1350                           url, wait_until=config.wait_until, timeout=config.page_timeout                       │
+│   1351                       )                                                                                        │
+│   1352                       redirected_url = page.url                                                                │
+│   1353                   except Error as e:                                                                           │
+│   1354 →                     raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")                          │
+│   1355                                                                                                                │
+│   1356                   await self.execute_hook(                                                                     │
+│   1357                       "after_goto", page, context=context, url=url, response=response, config=config           │
+│   1358                   )                                                                                            │
+│   1359                                                                                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705055/%D9%87%D8%A... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 1354 in _crawl_web (.venv\Lib\site-                                          │
+│ packages\crawl4ai\async_crawler_strategy.py):                                                                         │
+│   Error: Failed on navigating ACS-GOTO:                                                                               │
+│   Page.goto: Timeout 60000ms exceeded.                                                                                │
+│   Call log:                                                                                                           │
+│   - navigating to "https://www.isna.ir/news/1403120705055/%D9%87%D8%AA-%D8%AA%D8%B1%DB%8C%DA%A9-                      │
+│ %D8%B9%D8%B7%D8%A7%DB%8C%DB%8C-%D9%85%D9%82%D8%A7%D8%A8%D9%84-%D8%B4%D9%87%D8%AF%D8%A7%D8%A8-                         │
+│ %D9%81%D9%88%D9%84%D8%A7%D8%AF-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86-%D8%AC%D8%A7%D9%85-%D8%AD%D8%B0%D9%81%DB%8C-      │
+│ %D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84-%D8%B4%D8%AF", waiting until "domcontentloaded"                            │
+│                                                                                                                       │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   1349                       response = await page.goto(                                                              │
+│   1350                           url, wait_until=config.wait_until, timeout=config.page_timeout                       │
+│   1351                       )                                                                                        │
+│   1352                       redirected_url = page.url                                                                │
+│   1353                   except Error as e:                                                                           │
+│   1354 →                     raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")                          │
+│   1355                                                                                                                │
+│   1356                   await self.execute_hook(                                                                     │
+│   1357                       "after_goto", page, context=context, url=url, response=response, config=config           │
+│   1358                   )                                                                                            │
+│   1359                                                                                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120704882/%D8%B4%D8%B... | Error:
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 1354 in _crawl_web (.venv\Lib\site-                                          │
+│ packages\crawl4ai\async_crawler_strategy.py):                                                                         │
+│   Error: Failed on navigating ACS-GOTO:                                                                               │
+│   Page.goto: Timeout 60000ms exceeded.                                                                                │
+│   Call log:                                                                                                           │
+│   - navigating to "https://www.isna.ir/news/1403120704882/%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D9%BE%DB%8C%D8%B4-          │
+│ %D9%81%D8%B1%D9%88%D8%B4-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%D8%AF%D9%88%D9%85-%D8%B3%DA%A9%D9%87-                        │
+│ %D8%A7%D8%B9%D9%84%D8%A7%D9%85-%D8%B4%D8%AF-%D8%AA%D8%AD%D9%88%DB%8C%D9%84-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-            │
+│ %D8%A7%D8%B1%D8%AF%DB%8C%D8%A8%D9%87%D8%B4%D8%AA-%D9%88", waiting until "domcontentloaded"                            │
+│                                                                                                                       │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   1349                       response = await page.goto(                                                              │
+│   1350                           url, wait_until=config.wait_until, timeout=config.page_timeout                       │
+│   1351                       )                                                                                        │
+│   1352                       redirected_url = page.url                                                                │
+│   1353                   except Error as e:                                                                           │
+│   1354 →                     raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")                          │
+│   1355                                                                                                                │
+│   1356                   await self.execute_hook(                                                                     │
+│   1357                       "after_goto", page, context=context, url=url, response=response, config=config           │
+│   1358                   )                                                                                            │
+│   1359                                                                                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705051/%D8%AA%D9%8... | Error:
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 1354 in _crawl_web (.venv\Lib\site-                                          │
+│ packages\crawl4ai\async_crawler_strategy.py):                                                                         │
+│   Error: Failed on navigating ACS-GOTO:                                                                               │
+│   Page.goto: Timeout 60000ms exceeded.                                                                                │
+│   Call log:                                                                                                           │
+│   - navigating to "https://www.isna.ir/news/1403120705051/%D8%AA%D9%85%D8%AF%DB%8C%D8%AF-%D9%85%D8%AF%D8%AA-          │
+│ %D9%81%D8%B9%D8%A7%D9%84%DB%8C%D8%AA-%D8%B4%D9%88%D8%B1%D8%A7%D9%87%D8%A7%DB%8C-%D8%B4%D9%87%D8%B1-                   │
+│ %DA%AF%D8%A7%D9%85%DB%8C-%D8%B1%D8%A7%D9%87%D8%A8%D8%B1%D8%AF%DB%8C-%D8%AF%D8%B1-%D8%AA%D9%82%D9%88%DB%8C%D8%AA-      │
+│ %D8%AD%DA%A9%D9%85%D8%B1%D8%A7%D9%86%DB%8C-%D9%85%D8%AD%D9%84%DB%8C", waiting until "domcontentloaded"                │
+│                                                                                                                       │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   1349                       response = await page.goto(                                                              │
+│   1350                           url, wait_until=config.wait_until, timeout=config.page_timeout                       │
+│   1351                       )                                                                                        │
+│   1352                       redirected_url = page.url                                                                │
+│   1353                   except Error as e:                                                                           │
+│   1354 →                     raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")                          │
+│   1355                                                                                                                │
+│   1356                   await self.execute_hook(                                                                     │
+│   1357                       "after_goto", page, context=context, url=url, response=response, config=config           │
+│   1358                   )                                                                                            │
+│   1359                                                                                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705052/%D9%88%DB%8... | Error:
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 1354 in _crawl_web (.venv\Lib\site-                                          │
+│ packages\crawl4ai\async_crawler_strategy.py):                                                                         │
+│   Error: Failed on navigating ACS-GOTO:                                                                               │
+│   Page.goto: Timeout 60000ms exceeded.                                                                                │
+│   Call log:                                                                                                           │
+│   - navigating to "https://www.isna.ir/news/1403120705052/%D9%88%DB%8C%D8%AF%DB%8C%D9%88-%D8%A7%D8%B2-                │
+│ %D9%85%D9%88%D8%A7%D8%B6%D8%B9-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-%DA%86%DB%8C%D9%86-%D9%88-                 │
+│ %D8%B1%D9%88%D8%B3%DB%8C%D9%87-%D8%AA%D8%A7-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D9%87-%D8%A8%D8%A7-                        │
+│ %D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7", waiting until "domcontentloaded"                                               │
+│                                                                                                                       │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   1349                       response = await page.goto(                                                              │
+│   1350                           url, wait_until=config.wait_until, timeout=config.page_timeout                       │
+│   1351                       )                                                                                        │
+│   1352                       redirected_url = page.url                                                                │
+│   1353                   except Error as e:                                                                           │
+│   1354 →                     raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")                          │
+│   1355                                                                                                                │
+│   1356                   await self.execute_hook(                                                                     │
+│   1357                       "after_goto", page, context=context, url=url, response=response, config=config           │
+│   1358                   )                                                                                            │
+│   1359                                                                                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120704945/%D8%B9%D8%B... | Error:
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 1354 in _crawl_web (.venv\Lib\site-                                          │
+│ packages\crawl4ai\async_crawler_strategy.py):                                                                         │
+│   Error: Failed on navigating ACS-GOTO:                                                                               │
+│   Page.goto: Timeout 60000ms exceeded.                                                                                │
+│   Call log:                                                                                                           │
+│   - navigating to "https://www.isna.ir/news/1403120704945/%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D8%AA%D8%AD%D8%AA-    │
+│ %D9%81%D8%B4%D8%A7%D8%B1-%D9%88-%D8%AA%D8%AD%D8%B1%DB%8C%D9%85-%D8%A8%D8%A7-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-     │
+│ %D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D9%87-%D9%86%D8%AE%D9%88%D8%A7%D9%87%DB%8C%D9%85-%DA%A9%D8%B1%D8%AF", waiting until    │
+│ "domcontentloaded"                                                                                                    │
+│                                                                                                                       │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   1349                       response = await page.goto(                                                              │
+│   1350                           url, wait_until=config.wait_until, timeout=config.page_timeout                       │
+│   1351                       )                                                                                        │
+│   1352                       redirected_url = page.url                                                                │
+│   1353                   except Error as e:                                                                           │
+│   1354 →                     raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")                          │
+│   1355                                                                                                                │
+│   1356                   await self.execute_hook(                                                                     │
+│   1357                       "after_goto", page, context=context, url=url, response=response, config=config           │
+│   1358                   )                                                                                            │
+│   1359                                                                                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705053/%D8%A7%D9%8... | Error:
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 528 in wrap_api_call (.venv\Lib\site-                                        │
+│ packages\playwright\_impl\_connection.py):                                                                            │
+│   Error: BrowserContext.add_init_script: Target page, context or browser has been closed                              │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   523           parsed_st = _extract_stack_trace_information_from_stack(st, is_internal)                              │
+│   524           self._api_zone.set(parsed_st)                                                                         │
+│   525           try:                                                                                                  │
+│   526               return await cb()                                                                                 │
+│   527           except Exception as error:                                                                            │
+│   528 →             raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None                          │
+│   529           finally:                                                                                              │
+│   530               self._api_zone.set(None)                                                                          │
+│   531                                                                                                                 │
+│   532       def wrap_api_call_sync(                                                                                   │
+│   533           self, cb: Callable[[], Any], is_internal: bool = False                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705050/%DA%AF%D8%B... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 528 in wrap_api_call (.venv\Lib\site-                                        │
+│ packages\playwright\_impl\_connection.py):                                                                            │
+│   Error: BrowserContext.add_init_script: Target page, context or browser has been closed                              │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   523           parsed_st = _extract_stack_trace_information_from_stack(st, is_internal)                              │
+│   524           self._api_zone.set(parsed_st)                                                                         │
+│   525           try:                                                                                                  │
+│   526               return await cb()                                                                                 │
+│   527           except Exception as error:                                                                            │
+│   528 →             raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None                          │
+│   529           finally:                                                                                              │
+│   530               self._api_zone.set(None)                                                                          │
+│   531                                                                                                                 │
+│   532       def wrap_api_call_sync(                                                                                   │
+│   533           self, cb: Callable[[], Any], is_internal: bool = False                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705048/%D8%A8%D8%B... | Error:
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 528 in wrap_api_call (.venv\Lib\site-                                        │
+│ packages\playwright\_impl\_connection.py):                                                                            │
+│   Error: BrowserContext.add_init_script: Target page, context or browser has been closed                              │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   523           parsed_st = _extract_stack_trace_information_from_stack(st, is_internal)                              │
+│   524           self._api_zone.set(parsed_st)                                                                         │
+│   525           try:                                                                                                  │
+│   526               return await cb()                                                                                 │
+│   527           except Exception as error:                                                                            │
+│   528 →             raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None                          │
+│   529           finally:                                                                                              │
+│   530               self._api_zone.set(None)                                                                          │
+│   531                                                                                                                 │
+│   532       def wrap_api_call_sync(                                                                                   │
+│   533           self, cb: Callable[[], Any], is_internal: bool = False                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705047/%D8%A2%D9%8... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 528 in wrap_api_call (.venv\Lib\site-                                        │
+│ packages\playwright\_impl\_connection.py):                                                                            │
+│   Error: BrowserContext.add_init_script: Target page, context or browser has been closed                              │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   523           parsed_st = _extract_stack_trace_information_from_stack(st, is_internal)                              │
+│   524           self._api_zone.set(parsed_st)                                                                         │
+│   525           try:                                                                                                  │
+│   526               return await cb()                                                                                 │
+│   527           except Exception as error:                                                                            │
+│   528 →             raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None                          │
+│   529           finally:                                                                                              │
+│   530               self._api_zone.set(None)                                                                          │
+│   531                                                                                                                 │
+│   532       def wrap_api_call_sync(                                                                                   │
+│   533           self, cb: Callable[[], Any], is_internal: bool = False                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705045/%DA%A9%D8%B... | Error:
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 528 in wrap_api_call (.venv\Lib\site-                                        │
+│ packages\playwright\_impl\_connection.py):                                                                            │
+│   Error: BrowserContext.add_init_script: Target page, context or browser has been closed                              │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   523           parsed_st = _extract_stack_trace_information_from_stack(st, is_internal)                              │
+│   524           self._api_zone.set(parsed_st)                                                                         │
+│   525           try:                                                                                                  │
+│   526               return await cb()                                                                                 │
+│   527           except Exception as error:                                                                            │
+│   528 →             raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None                          │
+│   529           finally:                                                                                              │
+│   530               self._api_zone.set(None)                                                                          │
+│   531                                                                                                                 │
+│   532       def wrap_api_call_sync(                                                                                   │
+│   533           self, cb: Callable[[], Any], is_internal: bool = False                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705046/%D8%B9%D9%8... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 528 in wrap_api_call (.venv\Lib\site-                                        │
+│ packages\playwright\_impl\_connection.py):                                                                            │
+│   Error: BrowserContext.add_init_script: Target page, context or browser has been closed                              │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   523           parsed_st = _extract_stack_trace_information_from_stack(st, is_internal)                              │
+│   524           self._api_zone.set(parsed_st)                                                                         │
+│   525           try:                                                                                                  │
+│   526               return await cb()                                                                                 │
+│   527           except Exception as error:                                                                            │
+│   528 →             raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None                          │
+│   529           finally:                                                                                              │
+│   530               self._api_zone.set(None)                                                                          │
+│   531                                                                                                                 │
+│   532       def wrap_api_call_sync(                                                                                   │
+│   533           self, cb: Callable[[], Any], is_internal: bool = False                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705044/%D9%86%D8%A... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 528 in wrap_api_call (.venv\Lib\site-                                        │
+│ packages\playwright\_impl\_connection.py):                                                                            │
+│   Error: BrowserContext.add_init_script: Target page, context or browser has been closed                              │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   523           parsed_st = _extract_stack_trace_information_from_stack(st, is_internal)                              │
+│   524           self._api_zone.set(parsed_st)                                                                         │
+│   525           try:                                                                                                  │
+│   526               return await cb()                                                                                 │
+│   527           except Exception as error:                                                                            │
+│   528 →             raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None                          │
+│   529           finally:                                                                                              │
+│   530               self._api_zone.set(None)                                                                          │
+│   531                                                                                                                 │
+│   532       def wrap_api_call_sync(                                                                                   │
+│   533           self, cb: Callable[[], Any], is_internal: bool = False                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705000/ویدیو-پزشکی... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 528 in wrap_api_call (.venv\Lib\site-                                        │
+│ packages\playwright\_impl\_connection.py):                                                                            │
+│   Error: BrowserContext.add_init_script: Target page, context or browser has been closed                              │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   523           parsed_st = _extract_stack_trace_information_from_stack(st, is_internal)                              │
+│   524           self._api_zone.set(parsed_st)                                                                         │
+│   525           try:                                                                                                  │
+│   526               return await cb()                                                                                 │
+│   527           except Exception as error:                                                                            │
+│   528 →             raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None                          │
+│   529           finally:                                                                                              │
+│   530               self._api_zone.set(None)                                                                          │
+│   531                                                                                                                 │
+│   532       def wrap_api_call_sync(                                                                                   │
+│   533           self, cb: Callable[[], Any], is_internal: bool = False                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[ERROR]... × https://www.isna.ir/news/1403120705000/%D9%88%DB%8... | Error: 
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ × Unexpected error in _crawl_web at line 528 in wrap_api_call (.venv\Lib\site-                                        │
+│ packages\playwright\_impl\_connection.py):                                                                            │
+│   Error: BrowserContext.add_init_script: Target page, context or browser has been closed                              │
+│                                                                                                                       │
+│   Code context:                                                                                                       │
+│   523           parsed_st = _extract_stack_trace_information_from_stack(st, is_internal)                              │
+│   524           self._api_zone.set(parsed_st)                                                                         │
+│   525           try:                                                                                                  │
+│   526               return await cb()                                                                                 │
+│   527           except Exception as error:                                                                            │
+│   528 →             raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None                          │
+│   529           finally:                                                                                              │
+│   530               self._api_zone.set(None)                                                                          │
+│   531                                                                                                                 │
+│   532       def wrap_api_call_sync(                                                                                   │
+│   533           self, cb: Callable[[], Any], is_internal: bool = False                                                │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+
+
+-------------------------========================
+Crawl failed: Unexpected error in _crawl_web at line 1354 in _crawl_web (.venv\Lib\site-packages\crawl4ai\async_crawler_strategy.py):
+Error: Failed on navigating ACS-GOTO:
+Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.khabaronline.ir/
+Call log:
+  - navigating to "https://www.khabaronline.ir/", waiting until "domcontentloaded"
+
+
+Code context:
+1349                       response = await page.goto(
+1350                           url, wait_until=config.wait_until, timeout=config.page_timeout
+1351                       )
+1352                       redirected_url = page.url
+1353                   except Error as e:
+1354 →                     raise RuntimeError(f"Failed on navigating ACS-GOTO:\n{str(e)}")
+1355
+1356                   await self.execute_hook(
+1357                       "after_goto", page, context=context, url=url, response=response, config=config
+1358                   )
+1359
+Status code: None
