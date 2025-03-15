@@ -9,12 +9,12 @@ import hashlib
 
 class WebCrawler:
     def __init__(self, driver_path=None, output_folder="crawled"):
-        # ایجاد یک پوشه برای ذخیره تصاویر و متن‌های استخراج شده
+        # Creating a folder to store screenshots and extracted texts
         resource = os.path.join(os.path.dirname(__file__), 'resource')
         self.output_folder = os.path.join(resource, output_folder)
         os.makedirs(self.output_folder, exist_ok=True)
         options = Options()
-        options.add_argument("--headless")  # اجرای بدون رابط گرافیکی
+        options.add_argument("--headless") # Running in headless mode
         options.add_argument("--disable-gpu")
         options.add_argument("--window-size=1920,1080")
         self.driver = webdriver.Chrome(service=Service(driver_path) if driver_path else None, options=options)
@@ -25,10 +25,10 @@ class WebCrawler:
     
     def _hide_images(self):
         script = """
-        // حذف تمامی تگ‌های <img>
+        // Remove all <img> tags
         document.querySelectorAll('img').forEach(img => img.remove());
 
-        // حذف تمامی تگ‌های <source> که به فرمت تصویری اشاره دارند (مثل ویدیوها)
+        // Remove all <source> tags that refer to image formats (like videos)
         document.querySelectorAll('source').forEach(source => {
             let src = source.getAttribute('src') || '';
             if (src.match(/\\.(svg|png|gif|jpeg|webp|jpg)$/i)) {
@@ -36,21 +36,21 @@ class WebCrawler:
             }
         });
 
-        // حذف تمامی بخش‌هایی که از پس‌زمینه‌ی تصویری استفاده می‌کنند
+        // Remove all sections that use background images
         document.querySelectorAll('*').forEach(element => {
             let style = window.getComputedStyle(element);
             let backgroundImage = style.getPropertyValue('background-image');
             let background = style.getPropertyValue('background');
             let backgroundUrl = background.match(/url\\(([^)]+)\\)/i);
             if (backgroundUrl) {
-                element.style.background = 'none';  // حذف پس‌زمینه
+                element.style.background = 'none';  // Remove background
             }
             if (backgroundImage && backgroundImage.match(/\\.(svg|png|gif|jpeg|webp|jpg)$/i)) {
-                element.style.backgroundImage = 'none';  // حذف تصویر پس‌زمینه
+                element.style.backgroundImage = 'none';  // Remove background image
             }
         });
 
-        // حذف تمامی تگ‌های <picture> که تصویر درون خود دارند
+        // Remove all <picture> tags that contain images
         document.querySelectorAll('picture').forEach(picture => picture.remove());
         """
         
@@ -58,11 +58,11 @@ class WebCrawler:
     
     def take_screenshot(self, url):
         self.driver.get(url)
-        time.sleep(2)  # منتظر لود کامل صفحه می‌مانیم
+        time.sleep(2)  # Waiting for the page to fully load
         self._hide_images()
-        time.sleep(1)  # کمی تأخیر برای اجرای JavaScript
+        time.sleep(1)  # A little delay for JavaScript execution
         
-        # تنظیم ارتفاع مرورگر برابر با ارتفاع صفحه
+        # Setting the browser height equal to the page height
         height = self.driver.execute_script("return document.body.scrollHeight")
         self.driver.set_window_size(1920, height)
         
