@@ -2,12 +2,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 import time
 import os
 import hashlib
 
-class WebScreenshot:
-    def __init__(self, driver_path=None, output_folder="screenshots"):
+class WebCrawler:
+    def __init__(self, driver_path=None, output_folder="crawled"):
+        # ایجاد یک پوشه برای ذخیره تصاویر و متن‌های استخراج شده
         resource = os.path.join(os.path.dirname(__file__), 'resource')
         self.output_folder = os.path.join(resource, output_folder)
         os.makedirs(self.output_folder, exist_ok=True)
@@ -71,7 +73,38 @@ class WebScreenshot:
         screenshot_path = os.path.join(self.output_folder, self._sanitize_filename(url))
         self.driver.save_screenshot(screenshot_path)
         print(f"Screenshot saved: {screenshot_path}")
+
         return screenshot_path
     
+    def copy_and_save_text(self):
+        # Press Ctrl+A to select all text first
+        self.driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.CONTROL + 'a')
+        time.sleep(0.5)  # Small delay after selection
+        
+        # Press Ctrl+C to copy the selected text
+        self.driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.CONTROL + 'c')
+        time.sleep(0.5)  # Small delay after copying
+        
+        # Execute JavaScript to get the text content
+        text_content = self.driver.execute_script("""
+        return document.body.innerText;
+        """)
+        
+        # Create the text file path with the same name as the screenshot but .txt extension
+        text_filename = os.path.splitext(self.imageFileName)[0] + ".txt"
+        text_file_path = os.path.join(self.output_folder, text_filename)
+        
+        # Write the text content to the file
+        with open(text_file_path, 'w', encoding='utf-8') as f:
+            f.write(text_content)
+        
+        print(f"Text content saved: {text_file_path}")
+        return text_file_path
+
+    def get_screenshot_and_crawl_text(self, url):
+        screenshot_path = self.take_screenshot(url)
+        text_file_path = self.copy_and_save_text()
+        return screenshot_path, text_file_path
+
     def close(self):
         self.driver.quit()
